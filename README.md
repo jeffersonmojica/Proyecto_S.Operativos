@@ -1,4 +1,4 @@
 # SistemasOperativos
 Integrantes:
--Leonardo Mariño
--Jefferson Mojica
+- Leonardo Mariño
+- Jefferson Mojica
