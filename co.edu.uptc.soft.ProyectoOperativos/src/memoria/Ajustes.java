@@ -140,3 +140,6 @@ public class Ajustes {
 
             }    
 }
+
+
+//commir
