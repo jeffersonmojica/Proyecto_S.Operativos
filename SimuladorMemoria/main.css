@@ -58,7 +58,10 @@ tr:hover td {
 }
 
 .titulo {
-  animation: glitch 1s linear infinite;
+  color: black;
+  font-size: 30px;
+  border: 2px solid #01cc65;
+
 }
 
 @keyframes glitch {
@@ -273,11 +276,21 @@ button:hover {
 }
 
 .box {
-  background-color: slateblue;
+  background-color: #505050;
   padding: 10px;
   color: #fff;
   overflow-y: scroll;
   text-align: center;
+  width: 750px;
+}
+
+.box2 {
+  background-color: #505050;
+  padding: 10px;
+  color: #fff;
+  overflow-y: scroll;
+  text-align: center;
+  width: 500px;
 }
 
 .container {
