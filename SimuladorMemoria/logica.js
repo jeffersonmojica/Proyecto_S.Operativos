@@ -13,14 +13,14 @@ var programas = [{
     "text": 1203124,
 },
 {
-    "nombre": "NetBeans",
+    "nombre": "Paint",
     "tamano": 1048576 * 3,
     "bss": 460,
     "data": 1025223,
     "text": 2120045,
 },
 {
-    "nombre": "Sublime Text",
+    "nombre": "Xbox",
     "tamano": 1048576 / 2,
     "bss": 80,
     "data": 238860,
