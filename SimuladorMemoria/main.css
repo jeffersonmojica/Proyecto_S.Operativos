@@ -53,8 +53,8 @@ tr:nth-child(even) {
 }
 
 tr:hover td {
-  background-color: lightgreen;
-  color: #fff;
+  background-color: white;
+  color: black;
 }
 
 .titulo {
@@ -126,9 +126,9 @@ tr:hover td {
 
 .labelOrd {
   position: relative;
-  color: #ff4500; /* Orange red */
+  color: white; /* Orange red */
   font-size: 30px;
-  border: 2px solid #ff4500; /* Orange red */
+  border: 2px solid white; /* Orange red */
   border-radius: 5px;
   padding: 10px 50px;
   display: flex;
