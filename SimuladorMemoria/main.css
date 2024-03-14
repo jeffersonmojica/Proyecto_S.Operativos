@@ -7,10 +7,10 @@ body {
 
 .tabla {
   width: 100%;
-  background-color: white;
+  background-color: #222; /* Dark gray */
   text-align: left;
   border-collapse: collapse;
-  color: black;
+  color: #ddd; /* Light gray */
 }
 
 .contenedorTablaProgramas {
@@ -43,18 +43,17 @@ td {
 }
 
 thead {
-  background-color: #246355;
-  /* border-bottom: solid 5px; */
-  color: white;
+  background-color: #8b4513; /* Saddle brown */
+  color: #fff; /* White */
 }
 
 tr:nth-child(even) {
-  background-color: #ddd;
+  background-color: #333; /* Dark gray */
 }
 
 tr:hover td {
-  background-color: #369681;
-  color: white;
+  background-color: #a0522d; /* Sienna */
+  color: #fff; /* White */
 }
 
 .titulo {
@@ -64,17 +63,14 @@ tr:hover td {
 }
 
 @keyframes glitch {
-
   2%,
   64% {
     transform: translate(2px, 0) skew(0deg);
   }
-
   4%,
   60% {
     transform: translate(-2px, 0) skew(0deg);
   }
-
   62% {
     transform: translate(0, 0) skew(5deg);
   }
@@ -94,17 +90,14 @@ tr:hover td {
 }
 
 @keyframes glitchTop {
-
   2%,
   64% {
     transform: translate(2px, -2px);
   }
-
   4%,
   60% {
     transform: translate(-2px, 2px);
   }
-
   62% {
     transform: translate(13px, -1px) skew(-13deg);
   }
@@ -117,17 +110,14 @@ tr:hover td {
 }
 
 @keyframes glitchBotom {
-
   2%,
   64% {
     transform: translate(-2px, 0);
   }
-
   4%,
   60% {
     transform: translate(-2px, 0);
   }
-
   62% {
     transform: translate(-22px, 5px) skew(21deg);
   }
@@ -135,9 +125,9 @@ tr:hover td {
 
 .labelOrd {
   position: relative;
-  color: #01cc65;
+  color: #ff4500; /* Orange red */
   font-size: 30px;
-  border: 2px solid #01cc65;
+  border: 2px solid #ff4500; /* Orange red */
   border-radius: 5px;
   padding: 10px 50px;
   display: flex;
@@ -149,7 +139,7 @@ tr:hover td {
   content: "";
   height: 30px;
   width: 30px;
-  border: 3px solid #01cc65;
+  border: 3px solid #ff4500; /* Orange red */
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -168,22 +158,22 @@ tr:hover td {
 }
 
 .labelOrd:hover input~.checkmark {
-  background-color: #01cc65;
+  background-color: #ff4500; /* Orange red */
   height: 16px;
   width: 16px;
-  border: 10px solid #01cc65;
+  border: 10px solid #ff4500; /* Orange red */
 }
 
 .labelOrd input:checked~.label {
-  color: white;
-  background-color: #01cc65;
+  color: #000; /* Black */
+  background-color: #ff4500; /* Orange red */
 }
 
 .labelOrd input:checked~.checkmark {
   height: 16px;
   width: 16px;
-  border: 10px solid white;
-  background-color: #01cc65;
+  border: 10px solid #000; /* Black */
+  background-color: #ff4500; /* Orange red */
 }
 
 .checkmark:after {
@@ -213,8 +203,13 @@ tr:hover td {
   width: 250px;
   height: 50px;
   border: none;
+<<<<<<< HEAD
   color: white;
   background-color: rgb(0, 155, 255);
+=======
+  color: #fff; /* White */
+  background-color: #ff4500; /* Orange red */
+>>>>>>> 6f95308b3963d0d394ed98b7fb5597584e1a5769
   border-radius: 4px;
   box-shadow: inset 0 0 0 0 #ffffff;
   transition: ease-out 0.3s;
@@ -224,7 +219,7 @@ tr:hover td {
 .container .box #selecProgramas:hover {
   box-shadow: inset 131px 0 0 0 #ffffff;
   cursor: pointer;
-  color: #000;
+  color: #000; /* Black */
   height: 50px;
 }
 
@@ -256,8 +251,13 @@ button {
   width: 150px;
   height: 50px;
   border: none;
+<<<<<<< HEAD
   color: white;
   background-color: rgb(0, 155, 255);
+=======
+  color: #fff; /* White */
+  background-color: #ff4500; /* Orange red */
+>>>>>>> 6f95308b3963d0d394ed98b7fb5597584e1a5769
   border-radius: 4px;
   box-shadow: inset 0 0 0 0 #ffffff;
   transition: ease-out 0.3s;
@@ -267,17 +267,21 @@ button {
 button:hover {
   box-shadow: inset 150px 0 0 0 #ffffff;
   cursor: pointer;
-  color: #000;
+  color: #000; /* Black */
 }
 
-#tamaño {
+#tamano {
   margin-top: 20px;
 }
 
 .box {
+<<<<<<< HEAD
   background-color: #505050;
+=======
+  background-color: #333; /* Dark gray */
+>>>>>>> 6f95308b3963d0d394ed98b7fb5597584e1a5769
   padding: 10px;
-  color: #fff;
+  color: #fff; /* White */
   overflow-y: scroll;
   text-align: center;
   width: 750px;

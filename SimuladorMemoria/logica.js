@@ -1,37 +1,22 @@
 var programas = [{
     "nombre": "Word",
     "tamano": 1048576,
-    "bss": 165,
-    "data": 244986,
-    "text": 803425,
 },
 {
     "nombre": "Excel",
     "tamano": 1048576 * 2,
-    "bss": 256,
-    "data": 893772,
-    "text": 1203124,
 },
 {
     "nombre": "Paint",
     "tamano": 1048576 * 3,
-    "bss": 460,
-    "data": 1025223,
-    "text": 2120045,
 },
 {
     "nombre": "Xbox",
     "tamano": 1048576 / 2,
-    "bss": 80,
-    "data": 238860,
-    "text": 285348,
 },
 {
     "nombre": "Android Studio",
     "tamano": 1048576 * 6,
-    "bss": 1123,
-    "data": 1892119,
-    "text": 4398214,
 },
 ]
 
@@ -54,7 +39,7 @@ function llenarProgramas() {
     for (let i = 0; i < programas.length; i++) {
         const programa = programas[i];
 
-        var fila = "<tr><td>" + programa.nombre + "</td><td>" + programa.text + "</td><td>" + programa.data + "</td><td>" + programa.bss + "</td><td>" + programa.tamano + "</td><td><button name = 'btnEncender' class='btn btnEncender'" + " value='" + i + "' disabled>Encender</button>" + "</td></tr>";
+        var fila = "<tr><td>" + programa.nombre + "</td><td>" + "</td><td>" + "</td><td>" + "</td><td>" + programa.tamano + "</td><td><button name = 'btnEncender' class='btn btnEncender'" + " value='" + i + "' disabled>Encender</button>" + "</td></tr>";
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
@@ -408,27 +393,7 @@ function agregarListener() {
     })
 
     //// Acción para crear un programa
-    var btnNuevoPrograma = document.getElementById("nuevoPrograma");
-    btnNuevoPrograma.addEventListener("click", function () {
-        var name = prompt("Nombre del programa");
-        var text = parseInt(prompt("Tamaño del código"));
-        var data = parseInt(prompt("Tamaño de datos inicializados"));
-        var bss = parseInt(prompt("Tamaño de datos sin inicializar"));
-
-        if (name != "" && !isNaN(text) && !isNaN(data) && !isNaN(bss)) {
-            programas.push({
-                "nombre": name,
-                "text": text,
-                "data": data,
-                "bss": bss,
-                "tamano": data + text + bss,
-            });
-            llenarProgramas();
-        } else {
-            alert("Error en el llenado del formulario");
-        }
-    }, false)
-
+   
 
     //// Acción para ejecutar programas existentes
     $('#tablaProgramas').unbind('click');
@@ -535,18 +500,6 @@ function agregarListener() {
         var ordenamiento = document.getElementsByName("ordenamiento");
         switch (optMetodo.value) {
             case "1":
-                console.log("Particionamiento Dinamico Con Compactacion");
-                gestionMemoria = 1;
-                $("#contMetodos").hide();
-                $(".ordenamiento").show();
-                mostrarTablasPag(false);
-                mostrarTablasSeg(false);
-
-                ordenamiento[0].disabled = false;
-                ordenamiento[1].disabled = false;
-                ordenamiento[2].disabled = false;
-                break;
-            case "2":
                 console.log("Particionamiento Dinamico Sin Compactacion");
                 gestionMemoria = 2;
                 $("#contMetodos").hide();
@@ -558,7 +511,7 @@ function agregarListener() {
                 ordenamiento[1].disabled = false;
                 ordenamiento[2].disabled = false;
                 break;
-            case "3":
+            case "2":
                 console.log("Particionamiento Estatico Variable");
                 gestionMemoria = 3;
                 $("#contMetodos").show();
@@ -580,7 +533,7 @@ function agregarListener() {
                 ordenamiento[2].disabled = false;
 
                 break;
-            case "4":
+            case "3":
                 console.log("Particionamiento Estatico Fijo");
                 gestionMemoria = 4;
                 $(".ordenamiento").hide();
@@ -598,38 +551,6 @@ function agregarListener() {
                 ordenamiento[1].disabled = true;
                 ordenamiento[2].disabled = true;
 
-                break;
-            case "5":
-                console.log("Segmentacion");
-                gestionMemoria = 5;
-                $("#contMetodos").hide();
-                $(".ordenamiento").show();
-                mostrarTablasPag(false);
-                mostrarTablasSeg(true);
-
-                ordenamiento[0].disabled = false;
-                ordenamiento[1].disabled = false;
-                ordenamiento[2].disabled = false;
-
-                break;
-            case "6":
-                console.log("Paginacion");
-                gestionMemoria = 6;
-                $("#contMetodos").show();
-                $(".ordenamiento").hide();
-                mostrarTablasSeg(false);
-                mostrarTablasPag(true);
-
-                document.getElementById("contMetodos").replaceChildren();
-                const confPagina = "<div>Tamaño de la pagina</div>" +
-                    "<input type='text' name='tamanoPagina' id='tamanoPagina' autocomplete='off' placeholder='Tamano en Bytes'>" + "</input>";
-                var btn = document.createElement("DIV");
-                btn.innerHTML = confPagina;
-                document.getElementById("contMetodos").appendChild(btn);
-
-                ordenamiento[0].disabled = true;
-                ordenamiento[1].disabled = true;
-                ordenamiento[2].disabled = true;
                 break;
             default:
                 $(".ordenamiento").hide();
