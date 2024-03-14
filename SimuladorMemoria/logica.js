@@ -2,23 +2,43 @@ var programas = [{
     "nombre": "Word",
     "tamano": 1048576,
 },
-{
-    "nombre": "Excel",
-    "tamano": 1048576 * 2,
-},
-{
-    "nombre": "Paint",
-    "tamano": 1048576 * 3,
-},
-{
-    "nombre": "Xbox",
-    "tamano": 1048576 / 2,
-},
-{
-    "nombre": "Android Studio",
-    "tamano": 1048576 * 6,
-},
-]
+    {
+        "nombre": "Excel",
+        "tamano": 1048576 * 2,
+    },
+    {
+        "nombre": "Paint",
+        "tamano": 1048576 * 3,
+    },
+    {
+        "nombre": "Xbox",
+        "tamano": 1048576 / 2,
+    },
+    {
+        "nombre": "Android Studio",
+        "tamano": 1048576 * 6,
+    },
+    {
+        "nombre": "Photoshop",
+        "tamano": Math.floor(Math.random() * 1048576 * 10), // Tamaño aleatorio hasta 10 MB
+    },
+    {
+        "nombre": "Visual Studio Code",
+        "tamano": Math.floor(Math.random() * 1048576 * 8), // Tamaño aleatorio hasta 8 MB
+    },
+    {
+        "nombre": "Chrome",
+        "tamano": Math.floor(Math.random() * 1048576 * 5), // Tamaño aleatorio hasta 5 MB
+    },
+    {
+        "nombre": "Firefox",
+        "tamano": Math.floor(Math.random() * 1048576 * 4), // Tamaño aleatorio hasta 4 MB
+    },
+    {
+        "nombre": "Unity",
+        "tamano": Math.floor(Math.random() * 1048576 * 7), // Tamaño aleatorio hasta 7 MB
+    }];
+
 
 var particionesVariables = [1, 2, 2, 3, 3, 4]
 var gestionMemoria = 0;
