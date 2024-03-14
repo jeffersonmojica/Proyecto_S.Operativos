@@ -32,7 +32,7 @@ var programas = [{
     },
     {
         "nombre": "Firefox",
-        "tamano": Math.floor(Math.random() * 1048576 * 4), // Tamaño aleatorio hasta 4 MB
+        "tamano": Math.floor(Math.random() * 1048576 * 6), // Tamaño aleatorio hasta 4 MB
     },
     {
         "nombre": "Unity",
@@ -264,8 +264,11 @@ function dibujarProceso(posicionHex, nombre, tamano, id) {
             this.colores.push({ "id": id, "r": r, "g": g, "b": b });
         }
 
+        ctx.lineWidth = 7;
         ctx.fillStyle = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
         ctx.fillRect(0, posicion, 300, altura);
+        ctx.strokeStyle = "green";
+
 
         // Texto
         ctx.font = "20px Arial";
