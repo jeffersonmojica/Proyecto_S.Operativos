@@ -1,9 +1,9 @@
 var programas = [{
-    "nombre": "Word",
+    "nombre": "Explorer",
     "tamano": 1048576,
 },
     {
-        "nombre": "Excel",
+        "nombre": "PowerPoint",
         "tamano": 1048576 * 2,
     },
     {
@@ -15,7 +15,7 @@ var programas = [{
         "tamano": 1048576 / 2,
     },
     {
-        "nombre": "Android Studio",
+        "nombre": "Carpeta",
         "tamano": 1048576 * 6,
     },
     {
