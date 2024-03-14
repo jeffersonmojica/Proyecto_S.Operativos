@@ -324,12 +324,11 @@ function activarBotones(botones) {
 }
 
 function agregarListener() {
-    //// Empezar el programa 
     var btnEmpezar = document.getElementById("empezar");
     btnEmpezar.addEventListener("click", function () {
         var seleccionAjuste = $('input:radio[name=ordenamiento]:checked').val();
         var botones = document.getElementsByName("btnEncender");
-        memoria = new Memoria(1048576 * 15, null);
+        memoria = new Memoria(15689780, null);
         programasEjecutados = [];
         llenarEjecutados();
         idProceso = 0;

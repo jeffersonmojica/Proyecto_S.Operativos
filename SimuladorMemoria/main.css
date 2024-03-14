@@ -41,6 +41,7 @@ body {
 th,
 td {
     padding: 15px;
+
 }
 
 thead {
@@ -214,7 +215,7 @@ tr:hover td {
 .container .box #selecProgramas:hover {
     cursor: pointer;
     color: #000; /* Black */
-    height: 50px;
+    transform: scale(1.1); /* Escalamos el elemento al hacer hover */
 }
 
 .form {
