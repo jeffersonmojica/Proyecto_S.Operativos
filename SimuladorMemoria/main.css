@@ -44,7 +44,7 @@ td {
 }
 
 thead {
-  background-color: #ff4500; /* Saddle brown */
+  background-color: #1e90ff; /* Medium Aquamarine */
   color: #fff; /* White */
 }
 
@@ -60,7 +60,6 @@ tr:hover td {
 .titulo {
   color: white;
   font-size: 30px;
-
 }
 
 @keyframes glitch {
@@ -140,7 +139,7 @@ tr:hover td {
   content: "";
   height: 30px;
   width: 30px;
-  border: 3px solid #ff4500; /* Orange red */
+  border: 3px solid #1e90ff; /* Medium Aquamarine */
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -159,22 +158,22 @@ tr:hover td {
 }
 
 .labelOrd:hover input~.checkmark {
-  background-color: #ff4500; /* Orange red */
+  background-color: #1e90ff; /* Medium Aquamarine */
   height: 16px;
   width: 16px;
-  border: 10px solid #ff4500; /* Orange red */
+  border: 10px solid #1e90ff; /* Medium Aquamarine */
 }
 
 .labelOrd input:checked~.label {
   color: #000; /* Black */
-  background-color: #ff4500; /* Orange red */
+  background-color: #1e90ff; /* Medium Aquamarine */
 }
 
 .labelOrd input:checked~.checkmark {
   height: 16px;
   width: 16px;
   border: 10px solid #000; /* Black */
-  background-color: #ff4500; /* Orange red */
+  background-color: #1e90ff; /* Medium Aquamarine */
 }
 
 .checkmark:after {
@@ -197,7 +196,6 @@ tr:hover td {
 
 .container .box .Modelo {
   margin-top: 20px;
-
 }
 
 .container .box #selecProgramas {
@@ -208,7 +206,7 @@ tr:hover td {
   font-weight: normal;
   border: 2px;
   color: black;
-  background-color: white; /* Orange red */
+  background-color: #1e90ff; /* Medium Aquamarine */
   border-radius: 4px;
   box-shadow: inset 0 0 0 0 #ffffff;
   transition: ease-out 0.3s;
@@ -250,10 +248,10 @@ button {
   width: 150px;
   height: 50px;
   border: none;
-  font-size: revert; /* Tama√±o de fuente m√°s grande */
-  font-weight: bold; /* Texto m√°s notable */
+  font-size: revert; /* TamaÒo de fuente m·s grande */
+  font-weight: bold; /* Texto m·s notable */
   color: white;
-  background-color: #ff4500; /* Orange red */
+  background-color: #1e90ff; /* Medium Aquamarine */
   border-radius: 4px;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
@@ -282,7 +280,7 @@ button:hover::before {
 }
 
 button:hover {
-  background-color: #ff4500; /* Lighter Orange Red */
+  background-color: #1e90ff; /* Lighter Medium Aquamarine */
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7);
   transform: scale(1.1); /* Escalado al pasar el cursor */
 }
@@ -334,6 +332,7 @@ button span {
   padding: 3px; /* Espacio interior */
   margin: 3px; /* Espacio exterior */
 }
+
 .memoria-info canvas {
   border: 1px solid red; /* Estilo del borde para el elemento canvas */
   padding: 3px; /* Espacio interior */
@@ -345,4 +344,3 @@ button span {
   display: none; /* Oculta el contenido por defecto */
   /* Otros estilos si es necesario */
 }
-
