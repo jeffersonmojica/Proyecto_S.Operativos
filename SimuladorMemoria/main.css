@@ -214,7 +214,7 @@ tr:hover td {
 }
 
 .container .box #selecProgramas:hover {
-  box-shadow: inset 131px 0 0 0 #ffffff;
+  box-shadow: inset 150px 0 0 0 #ffffff;
   cursor: pointer;
   color: #000; /* Black */
   height: 50px;
