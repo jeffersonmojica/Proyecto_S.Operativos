@@ -1,5 +1,6 @@
 class Memoria {
     constructor(tamano) {
+        this.mem = tamano
         this.segmentos = [{ "proceso": null, "tamano": tamano, "posicion": "100000" }]
     }
 
@@ -84,6 +85,9 @@ class Memoria {
                 this.compactarMemoria();
                 break;
         }
+
+        this.actualizarMemoriaDisponible()
+        this.actualizarMemoriaOcupada();
     }
 
     eliminarProcesoPag(id) {
@@ -97,6 +101,17 @@ class Memoria {
             }
         }
         this.dividirMemoria();
+    }
+    actualizarMemoriaDisponible() {
+        const memoriaDisponibleElemento = document.getElementById("memoria-disponible-valor");
+        const memoriaDisponible = this.getMemoriaDisponible();
+        memoriaDisponibleElemento.textContent = memoriaDisponible;
+    }
+
+    actualizarMemoriaOcupada() {
+        const memoriaOcupadaElemento = document.getElementById("memoria-ocupada-valor");
+        const memoriaOcu = this.mem - this.getMemoriaDisponible();
+        memoriaOcupadaElemento.textContent = memoriaOcu;
     }
 
     cabeSegmento(proceso) {
@@ -122,18 +137,6 @@ class Memoria {
     }
 
     insertarProceso(proceso, metodo, seleccionAjuste) {
-        /// Paginacion
-        if (metodo == 6) {
-            if (this.getMemoriaDisponible() == 0) {
-                return 0;
-            }
-            if (this.getMemoriaDisponible() < proceso.tamano) {
-                return 1;
-            }
-
-            var procesoPaginado = this.paginarProceso(proceso, this.segmentos[0].tamano);
-            return this.paginacion(procesoPaginado);
-        }
 
         /// Segmentación
         if (metodo == 5) {
@@ -168,9 +171,15 @@ class Memoria {
             if (resultado == 1 || resultado == 0) {
                 return resultado;
             }
-            return this.dividirMemoria();
+            const resultadoDividir = this.dividirMemoria();
+            this.actualizarMemoriaDisponible(); // Actualizar la memoria disponible después de dividir la memoria
+            this.actualizarMemoriaOcupada();
+            return resultadoDividir;
         }
-
+        
+        this.actualizarMemoriaDisponible();
+        this.actualizarMemoriaOcupada();
+        
         return resultado;
     }
 
@@ -320,14 +329,10 @@ class Memoria {
 }
 
 class Proceso {
-    constructor(id, nombre, bss, data, text, tamano, posicion) {
+    constructor(id, nombre, tamano ) {
         this.id = id
         this.nombre = nombre
-        this.bss = bss
-        this.data = data
-        this.text = text
         this.tamano = tamano
-        this.posicion = posicion
     }
 
     getId() {
