@@ -59,7 +59,7 @@ function llenarProgramas() {
     for (let i = 0; i < programas.length; i++) {
         const programa = programas[i];
 
-        var fila = "<tr><td>" + programa.nombre + "</td><td>" + "</td><td>" + "</td><td>" + "</td><td>" + programa.tamano + "</td><td><button name = 'btnEncender' class='btn btnEncender'" + " value='" + i + "' disabled>Encender</button>" + "</td></tr>";
+        var fila = "<tr><td>" + programa.nombre + "</td><td>" + "</td><td>" + "</td><td>" + "</td><td>" + programa.tamano + "</td><td><button name = 'btnEncender' class='btn btnEncender'" + " value='" + i + "' disabled>Agregar</button>" + "</td></tr>";
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
