@@ -420,10 +420,8 @@ function agregarListener() {
         this.colores = [];
     })
 
-    //// Acción para crear un programa
 
-
-    //// Acción para ejecutar programas existentes
+    //// Acción para ejecutar los programas
     $('#tablaProgramas').unbind('click');
     $('#tablaProgramas').on('click', '.btnEncender', function (event) {
         var $row = $(this).closest("tr");
