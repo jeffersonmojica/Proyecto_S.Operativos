@@ -344,3 +344,6 @@ button span {
   display: none; /* Oculta el contenido por defecto */
   /* Otros estilos si es necesario */
 }
+#empezar {
+    font-size: 30px; 
+}
