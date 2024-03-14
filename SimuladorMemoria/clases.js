@@ -1,7 +1,7 @@
 class Memoria {
     constructor(tamano) {
         this.mem = tamano
-        this.segmentos = [{ "proceso": null, "tamano": tamano, "posicion": "100000" }]
+        this.segmentos = [{"proceso": null, "tamano": tamano, "posicion": "100000"}]
     }
 
     getSegmentos() {
@@ -50,7 +50,7 @@ class Memoria {
         this.segmentos[0].tamano = tamSeg;
         for (let index = 0; index < segmentos - 1; index++) {
             posicion = posicion + tamSeg;
-            this.segmentos.push({ "proceso": null, "tamano": tamSeg, "posicion": componentToHex(Math.ceil(posicion)) });
+            this.segmentos.push({"proceso": null, "tamano": tamSeg, "posicion": componentToHex(Math.ceil(posicion))});
         }
     }
 
@@ -60,7 +60,11 @@ class Memoria {
         this.segmentos[0].tamano = mega * segmentos[0];
         for (let index = 1; index < segmentos.length; index++) {
             posicion = posicion + mega * segmentos[index - 1];
-            this.segmentos.push({ "proceso": null, "tamano": mega * segmentos[index], "posicion": componentToHex(Math.ceil(posicion)) });
+            this.segmentos.push({
+                "proceso": null,
+                "tamano": mega * segmentos[index],
+                "posicion": componentToHex(Math.ceil(posicion))
+            });
         }
     }
 
@@ -102,6 +106,7 @@ class Memoria {
         }
         this.dividirMemoria();
     }
+
     actualizarMemoriaDisponible() {
         const memoriaDisponibleElemento = document.getElementById("memoria-disponible-valor");
         const memoriaDisponible = this.getMemoriaDisponible();
@@ -176,10 +181,10 @@ class Memoria {
             this.actualizarMemoriaOcupada();
             return resultadoDividir;
         }
-        
+
         this.actualizarMemoriaDisponible();
         this.actualizarMemoriaOcupada();
-        
+
         return resultado;
     }
 
@@ -288,8 +293,7 @@ class Memoria {
         return 0;
     }
 
-    
-    
+
     dividirMemoria() {
         // no borrar!!!!!
         /// Dividir la memoria en el tamaño de los segmentos
@@ -301,7 +305,11 @@ class Memoria {
                     var posicion = parseInt(element.posicion, 16) + parseInt(element.proceso.tamano);
 
                     element.tamano = parseInt(element.proceso.tamano);
-                    this.segmentos.splice(index + 1, 0, { "proceso": null, "tamano": nuevoSeg, "posicion": componentToHex(Math.ceil(posicion)) });
+                    this.segmentos.splice(index + 1, 0, {
+                        "proceso": null,
+                        "tamano": nuevoSeg,
+                        "posicion": componentToHex(Math.ceil(posicion))
+                    });
                 }
             }
         }
@@ -325,11 +333,11 @@ class Memoria {
         return this.segmentos;
     }
 
-    
+
 }
 
 class Proceso {
-    constructor(id, nombre, tamano ) {
+    constructor(id, nombre, tamano) {
         this.id = id
         this.nombre = nombre
         this.tamano = tamano
@@ -351,4 +359,3 @@ class Proceso {
         return this.posicion;
     }
 }
-//ca

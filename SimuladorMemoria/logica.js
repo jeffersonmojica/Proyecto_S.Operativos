@@ -64,7 +64,8 @@ function llenarProgramas() {
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("programas").appendChild(btn);
-    };
+    }
+    ;
 }
 
 function mostrarTablasSeg(mostrar) {
@@ -145,7 +146,8 @@ function llenarEjecutados() {
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("ejecucion").appendChild(btn);
-    };
+    }
+    ;
 }
 
 function llenarMarcos() {
@@ -165,7 +167,8 @@ function llenarMarcos() {
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("marcos").appendChild(btn);
-    };
+    }
+    ;
 }
 
 function llenarLibres() {
@@ -173,12 +176,13 @@ function llenarLibres() {
 
     var segmentos = memoria.getSegmentosLibres();
     for (let i = 0; i < segmentos.length; i++) {
-        var fila = "<tr><td>" + segmentos[i].tamano + "</td><td>0x" +  segmentos[i].posicion + "</td></tr>";
+        var fila = "<tr><td>" + segmentos[i].tamano + "</td><td>0x" + segmentos[i].posicion + "</td></tr>";
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("libres").appendChild(btn);
-    };
+    }
+    ;
 }
 
 function llenarSegmentos() {
@@ -189,15 +193,16 @@ function llenarSegmentos() {
     for (let i = 0; i < segmentosEjecutados.length; i++) {
         const programa = segmentosEjecutados[i];
 
-        var fila = "<tr><td>" + programa.id + "</td><td>" + programa.nombre +  "</td><td>" + programa.parte + "</td><td>" +programa.tamano + "</td><td>0x" + programa.posicion + "</td><td><button class='btn btnApagar'" + " value='" + i + "'>Apagar</button>" + "</td></tr>";
+        var fila = "<tr><td>" + programa.id + "</td><td>" + programa.nombre + "</td><td>" + programa.parte + "</td><td>" + programa.tamano + "</td><td>0x" + programa.posicion + "</td><td><button class='btn btnApagar'" + " value='" + i + "'>Apagar</button>" + "</td></tr>";
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("segmentos").appendChild(btn);
-    };
+    }
+    ;
 }
 
-function llenarTpps(){
+function llenarTpps() {
     document.getElementById("tpps").replaceChildren();
 
     for (let i = 0; i < programasTTP.length; i++) {
@@ -205,29 +210,29 @@ function llenarTpps(){
         console.log(programasTTP);
         var marco = determinarMarco(programa.nombre, programa.id);
 
-        var fila = "<tr><td>" + programa.id + "</td><td>" + programa.nombre + "</td><td>" + programa.pagina + "</td><td>"+ componentToHex(marco) +"</td><td>"+"<button class='btn btnApagar'" + " value='" + i + "'>Apagar</button>" + "</tr>";
-        
+        var fila = "<tr><td>" + programa.id + "</td><td>" + programa.nombre + "</td><td>" + programa.pagina + "</td><td>" + componentToHex(marco) + "</td><td>" + "<button class='btn btnApagar'" + " value='" + i + "'>Apagar</button>" + "</tr>";
+
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tpps").appendChild(btn);
     }
 }
 
-function determinarMarco(nombreProceso, idProceso){
-    
+function determinarMarco(nombreProceso, idProceso) {
+
     var segmentos = memoria.getSegmentos();
     var marco = 0;
 
-    for (let index = 0; index < segmentos.length; index++){
-        if(segmentos[index].proceso == null){
+    for (let index = 0; index < segmentos.length; index++) {
+        if (segmentos[index].proceso == null) {
             console.log("null");
-        }else{
-            if (nombreProceso === segmentos[index].proceso.nombre && idProceso === segmentos[index].proceso.id){
+        } else {
+            if (nombreProceso === segmentos[index].proceso.nombre && idProceso === segmentos[index].proceso.id) {
                 return marco = index;
             }
         }
-    } 
-    
+    }
+
 }
 
 function limpiarMemoria() {
@@ -261,7 +266,7 @@ function dibujarProceso(posicionHex, nombre, tamano, id) {
             var r = Math.round(Math.random() * 255);
             var g = Math.round(Math.random() * 255);
             var b = Math.round(Math.random() * 255);
-            this.colores.push({ "id": id, "r": r, "g": g, "b": b });
+            this.colores.push({"id": id, "r": r, "g": g, "b": b});
         }
 
         ctx.lineWidth = 7;
@@ -416,7 +421,7 @@ function agregarListener() {
     })
 
     //// Acción para crear un programa
-   
+
 
     //// Acción para ejecutar programas existentes
     $('#tablaProgramas').unbind('click');
@@ -428,7 +433,7 @@ function agregarListener() {
     });
 
     //// Detener programas en ejecución segmentacion
-    $('#tablaSegemetnos').on('click','.btnApagar', function (event){
+    $('#tablaSegemetnos').on('click', '.btnApagar', function (event) {
         limpiarMemoria();
         dibujarMemoria(1, 4);
         dibujarProceso("000000", "SO", 1048576);
@@ -447,7 +452,7 @@ function agregarListener() {
     })
 
     //// Detener programas en ejecución paginación
-    $('#tablaTPP').on('click','.btnApagar', function (event) {
+    $('#tablaTPP').on('click', '.btnApagar', function (event) {
         limpiarMemoria();
 
         var tamPagina = document.getElementsByName("tamanoPagina");
@@ -610,7 +615,10 @@ function ejecutarProceso(proceso) {
 
         idProceso += 1;
         programasEjecutados.push({
-            "id": idProceso, "nombre": proceso[0].textContent, "tamano": proceso[4].textContent, "posicion": procesoGuardado[0].posicion
+            "id": idProceso,
+            "nombre": proceso[0].textContent,
+            "tamano": proceso[4].textContent,
+            "posicion": procesoGuardado[0].posicion
         });
         llenarEjecutados();
     }
@@ -621,7 +629,13 @@ function ejecutarProceso(proceso) {
         idProceso += 1;
         procesoGuardado.forEach(procesog => {
             var parte = procesog.proceso.nombre.split(" - ")
-            segmentosEjecutados.push({"id": idProceso, "nombre": proceso[0].textContent, "parte": parte[1], "tamano": procesog.tamano, "posicion": procesog.posicion});
+            segmentosEjecutados.push({
+                "id": idProceso,
+                "nombre": proceso[0].textContent,
+                "parte": parte[1],
+                "tamano": procesog.tamano,
+                "posicion": procesog.posicion
+            });
         });
         llenarSegmentos();
         llenarLibres();
@@ -632,8 +646,12 @@ function ejecutarProceso(proceso) {
         idProceso += 1;
         llenarMarcos();
 
-        for(let index = 0; index < procesoGuardado.length; index++ ){
-            programasTTP.push({"id": procesoGuardado[index].proceso.id, "nombre": procesoGuardado[index].proceso.nombre, "pagina": index});
+        for (let index = 0; index < procesoGuardado.length; index++) {
+            programasTTP.push({
+                "id": procesoGuardado[index].proceso.id,
+                "nombre": procesoGuardado[index].proceso.nombre,
+                "pagina": index
+            });
         }
         llenarTpps();
     }
